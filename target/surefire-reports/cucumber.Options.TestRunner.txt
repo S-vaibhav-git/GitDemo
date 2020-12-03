@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: cucumber.Options.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.77 s <<< FAILURE! - in cucumber.Options.TestRunner
+initializationError(cucumber.Options.TestRunner)  Time elapsed: 0.006 s  <<< ERROR!
+cucumber.runtime.CucumberException: Error parsing feature file placeValidations.feature
+Caused by: gherkin.lexer.LexingError: 
+Lexing error on line 24: '@DeletePlace @Regression	       #multiple tags can also be given, and any tag name can be used to trigger te scenario
+Scenario: Verify if delete Place functionality is working
+
+	Given DeletePlace Payload
+	When user calls "DeletePlaceAPI" with "Post" http request
+	Then the API call got success with status code 200
+	And "status" in response body is "OK" 
+%_FEATURE_END_%'. See http://wiki.github.com/cucumber/gherkin/lexingerror for more information.
+
